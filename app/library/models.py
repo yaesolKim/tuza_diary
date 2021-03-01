@@ -1,5 +1,5 @@
 from django.db.models import Model, CharField, TextField, DateField, FloatField
-from jsonfield import JSONField ##YS
+from django.contrib.postgres.fields import JSONField
 
 # Create your models here.
 # 게시글(Post)엔 제목(postname), 내용(contents)이 존재합니다
