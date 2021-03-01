@@ -13,7 +13,6 @@
 - UI-Ready app, SQLite Database, Django Native ORM
 - Modular design, clean code-base
 - Session-Based Authentication, Forms validation
-- Deployment scripts: Docker, Gunicorn / Nginx
 
 <br />
 
@@ -21,7 +20,6 @@
 
 * [Demo](#demo)
 * [Quick Start](#quick-start)
-* [Documentation](#documentation)
 * [File Structure](#file-structure)
 * [Browser Support](#browser-support)
 * [Resources](#resources)
@@ -37,6 +35,9 @@
 > To authenticate use the default credentials ***test / ApS12_ZZs8*** or create a new user on the [registration page](https://creativetim-django-dashboard-black-pro.appseed.us/register/).
 
 - **Black Dashboard Django** [Login Page](https://www.creative-tim.com/live/black-dashboard-django)
+- Demo: <https://www.creative-tim.com/live/black-dashboard-django>
+- [데이터베이스 디자인](https://docs.google.com/spreadsheets/d/1_pgdn0e-AdmcutXOAvtzWg2hpe9V0mC-lizqFTmv1_U/edit#gid=1518940313)
+
 
 <br />
 
@@ -132,11 +133,6 @@ At present, we officially aim to support the last two versions of the following 
 <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> 
 <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> 
 
-<br />
-
-## Resources
-
-- Demo: <https://www.creative-tim.com/live/black-dashboard-django>
 
 <br />
 
