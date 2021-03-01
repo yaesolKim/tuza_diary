@@ -458,6 +458,8 @@ demo = {
       },
       options: gradientChartOptionsConfigurationWithTooltipPurple
     };
+
+    // 복기차트
     var myChartData = new Chart(ctx, config);
     $("#0").click(function() {
       var data = myChartData.config.data;

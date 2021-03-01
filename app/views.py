@@ -17,14 +17,16 @@ from .library.trading_indicators import bollinger_band, data_settings
 
 from plotly.offline import plot
 
+
 @login_required(login_url="/login/")
 def index(request):
-    #처음 접속하면 무조건 로그인 페이지인가보다.
+    # 처음 접속하면 무조건 로그인 페이지인가보다.
     context = {}
     context['segment'] = 'index'
 
-    html_template = loader.get_template( 'index.html' )
+    html_template = loader.get_template('index.html')
     return HttpResponse(html_template.render(context, request))
+
 
 @login_required(login_url="/login/")
 def pages(request):
@@ -32,21 +34,21 @@ def pages(request):
     # All resource paths end in .html.
     # Pick out the html file name from the url. And load that template.
     try:
-        
-        load_template      = request.path.split('/')[-1]
+
+        load_template = request.path.split('/')[-1]
         context['segment'] = load_template
-        
-        html_template = loader.get_template( load_template )
+
+        html_template = loader.get_template(load_template)
         return HttpResponse(html_template.render(context, request))
-        
+
     except template.TemplateDoesNotExist:
 
-        html_template = loader.get_template( 'page-404.html' )
+        html_template = loader.get_template('page-404.html')
         return HttpResponse(html_template.render(context, request))
 
     except:
-    
-        html_template = loader.get_template( 'page-500.html' )
+
+        html_template = loader.get_template('page-500.html')
         return HttpResponse(html_template.render(context, request))
 
 
@@ -66,6 +68,7 @@ def post(request, pk):
     plt_div = get_data(post.code)
     # post.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
     return render(request, 'main/post.html', {'post': post, 'plt_div': plt_div})
+
 
 def recon_chart(request, pk):
     coin_df = data_settings(code='005930', start=datetime(2018, 1, 1))
