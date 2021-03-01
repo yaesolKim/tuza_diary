@@ -5,6 +5,12 @@
  [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/black-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-django/issues?q=is%3Aissue+is%3Aclosed) 
  [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
 
+> Dev Memo
+
+이미 git에 올라간 특정 파일의 수정된 내용을 무시하는 command  
+
+`git update-index --assume-unchanged core/settings.py`
+
 
 > Free product - **Django Dashboard** starter project - Features:
 
