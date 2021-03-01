@@ -1,10 +1,10 @@
 # [투자 다이어](https://kimmisol.com/tuza_diary)
 
- ![version](https://img.shields.io/badge/version-1.0.1-blue.svg) [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/black-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-django/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/black-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-django/issues?q=is%3Aissue+is%3Aclosed) [![Join the chat at https://gitter.im/NIT-dgp/General](https://badges.gitter.im/NIT-dgp/General.svg)](https://gitter.im/creative-tim-general/Lobby) [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
+ ![version](https://img.shields.io/badge/version-1.0.1-blue.svg) 
+ [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/black-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-django/issues?q=is%3Aopen+is%3Aissue) 
+ [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/black-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-django/issues?q=is%3Aissue+is%3Aclosed) 
+ [![Chat](https://img.shields.io/badge/chat-on%20discord-7289da.svg)](https://discord.gg/E4aHAQy)
 
-![Black Dashboard Django - Admin Dashboard coded in Django.](https://github.com/creativetimofficial/black-dashboard-django/blob/master/media/black-dashboard-django-intro.gif)
-
-<br />
 
 > Free product - **Django Dashboard** starter project - Features:
 
@@ -46,16 +46,7 @@
 
 ```bash
 $ # Get the code
-$ git clone https://github.com/creativetimofficial/black-dashboard-django.git
-$ cd black-dashboard-django
-$
-$ # Virtualenv modules installation (Unix based systems)
-$ virtualenv env
-$ source env/bin/activate
-$
-$ # Virtualenv modules installation (Windows based systems)
-$ # virtualenv env
-$ # .\env\Scripts\activate
+$ git clone https://github.com/yaesolKim/tuza_diary.git
 $
 $ # Install modules - SQLite Storage
 $ pip3 install -r requirements.txt
@@ -74,11 +65,6 @@ $ # Access the web app in browser: http://127.0.0.1:8000/
 ```
 
 > Note: To use the app, please access the registration page and create a new user. After authentication, the app will unlock the private pages.
-
-<br />
-
-## Documentation
-The documentation for the **Black Dashboard Django** is hosted at our [website](https://demos.creative-tim.com/black-dashboard-django/docs/1.0/getting-started/getting-started-django.html).
 
 <br />
 
@@ -137,46 +123,20 @@ Within the download you'll find the following directories and files:
 ```
 
 <br />
-
 ## Browser Support
 
 At present, we officially aim to support the last two versions of the following browsers:
 
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> 
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> 
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> 
+<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> 
 
 <br />
 
 ## Resources
 
 - Demo: <https://www.creative-tim.com/live/black-dashboard-django>
-- Download Page: <https://www.creative-tim.com/product/black-dashboard-django>
-- Documentation: <https://demos.creative-tim.com/black-dashboard-django/docs/1.0/getting-started/getting-started-django.html>
-- License Agreement: <https://www.creative-tim.com/license>
-- Support: <https://www.creative-tim.com/contact-us>
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/black-dashboard-django/issues)
-
-<br />
-
-## Reporting Issues
-
-We use GitHub Issues as the official bug tracker for the **Black Dashboard Django**. Here are some advices for our users that want to report an issue:
-
-1. Make sure that you are using the latest version of the **Black Dashboard Django**. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser-specific, so specifying in what browser you encountered the issue might help.
-
-<br />
-
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
-
-<br />
-
-## Licensing
-
-- Copyright 2019 - present [Creative Tim](https://www.creative-tim.com/)
-- Licensed under [Creative Tim EULA](https://www.creative-tim.com/license)
 
 <br />
 
@@ -191,9 +151,6 @@ If you have questions or need help integrating the product please [contact us](h
 
 ## Social Media
 
-- Twitter: <https://twitter.com/CreativeTim>
-- Facebook: <https://www.facebook.com/CreativeTim>
-- Dribbble: <https://dribbble.com/creativetim>
 - Instagram: <https://www.instagram.com/CreativeTimOfficial>
 
 <br />
