@@ -1,4 +1,4 @@
-# [투자 다이어](https://kimmisol.com/tuza_diary)
+# [투자 다이어리](https://kimmisol.com/tuza_diary)
 
  ![version](https://img.shields.io/badge/version-1.0.1-blue.svg) 
  [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/black-dashboard-django.svg?maxAge=2592000)](https://github.com/creativetimofficial/black-dashboard-django/issues?q=is%3Aopen+is%3Aissue) 
