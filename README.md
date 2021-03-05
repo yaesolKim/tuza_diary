@@ -159,3 +159,34 @@ At present, we officially aim to support the last two versions of the following 
 
 ---
 [Black Dashboard Django](https://www.creative-tim.com/product/black-dashboard-django) - Provided by [Creative Tim](https://www.creative-tim.com/) and [AppSeed](https://appseed.us)
+
+---
+
+# psql
+
+1. Open 'SQL Shell (psql)'
+   
+1. Command list 
+    | command | description |
+    |---|---|
+    | \l | Database list |
+    | \dt | Table list |
+    | \c [database_name] | connect to DB |
+    | \q | get out of psql |
+    | \h | help | 
+   
+1. Create Database  
+    `CREATE DATABASE postgres`
+   
+1. Check database created  
+    `\l`
+   
+1. Access to postgres DB  
+    `\c y_tuza_diary`
+   
+1. Check Table created  
+    `\dt`  
+   
+
+### 참고자료
+[Django로 게시판 만들기](https://wikidocs.net/91422)
