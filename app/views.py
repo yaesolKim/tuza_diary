@@ -13,7 +13,7 @@ from django import template
 import websockets
 import asyncio
 
-from .models import Post, Market
+from . import models
 from datetime import datetime
 
 from .library.graphs import draw_candle_with_indicator
@@ -68,20 +68,40 @@ def get_data(code):
 # post.html 페이지를 부르는 post 함수
 def post(request, pk):
     # 게시글(Post) 중 pk(primary_key)를 이용해 하나의 게시글(post)를 검색
-    post = Post.objects.get(pk=pk)
+    post = models.Post.objects.get(pk=pk)
     plt_div = get_data(post.code)
     # post.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
     return render(request, 'main/post.html', {'post': post, 'plt_div': plt_div})
 
 
+def get_market(market_id):
+    market = models.Market.objects.get(id=market_id)
+    return market
+
+
+def get_markets():
+    markets = models.Market.objects.all()
+    return markets
+
+
+# 배당금/시드 관리 페이지
+def devidend(request):
+    context = {}
+    html_template = loader.get_template('devidend.html')
+    # devidend = models.Devidend.objects.get(user_id=1)
+    accounts = models.Account.objects.all().filter(user_id=1)
+    candles = models.Candle.objects.all()
+    data = {'accounts': accounts, 'candles': candles}
+
+    # return HttpResponse(html_template.render(context, request, data))
+    return render(request, 'devidend.html', data)
+
+
 def market(request):
-    # markets = Market.object.all()
-    # context = {'markets': markets}
     context = {}
     html_template = loader.get_template('market.html')
 
     return HttpResponse(html_template.render(context, request))
-    # return render(request, 'market.html', context)
 
 
 def recon_chart(request, pk):
