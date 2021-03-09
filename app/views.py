@@ -9,7 +9,11 @@ from django.template import loader
 from django.http import HttpResponse
 from django import template
 
-from .library.models import Post
+# websocket api
+import websockets
+import asyncio
+
+from .models import Post, Market
 from datetime import datetime
 
 from .library.graphs import draw_candle_with_indicator
@@ -70,9 +74,41 @@ def post(request, pk):
     return render(request, 'main/post.html', {'post': post, 'plt_div': plt_div})
 
 
+def market(request):
+    # markets = Market.object.all()
+    # context = {'markets': markets}
+    context = {}
+    html_template = loader.get_template('market.html')
+
+    return HttpResponse(html_template.render(context, request))
+    # return render(request, 'market.html', context)
+
+
 def recon_chart(request, pk):
     coin_df = data_settings(code='005930', start=datetime(2018, 1, 1))
     fig = draw_candle_with_indicator(coin_df, '005930')
     plt_div = plot(fig, output_type='div')
     # post.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
     return render(request, 'recon_chart.html', {'post': post, 'plt_div': plt_div})
+
+
+async def get_coin_data_by_websocket():
+    uri = "wss://pubwss.bithumb.com/pub/ws"
+
+    async with websockets.connect(uri, ping_interval=None) as websocket:
+        greeting = await websocket.recv()
+        print(greeting)
+
+        # 구독 요청
+        data = '{"type":"ticker", "symbols": ["BTC_KRW"], "tickTypes": ["30M"]}'
+        await websocket.send(data)
+
+        print("after send data")
+
+        while True:
+            recv_data = await websocket.recv()
+            print(recv_data)
+
+
+if __name__ == "__main__":
+    asyncio.get_event_loop().run_until_complete(get_coin_data_by_websocket())
