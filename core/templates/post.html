@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post List</title>
+</head>
+<body>
+<!--
+주식 / 코인 dropdown
+종목 dropdown
+
+복기차트
+
+얼마에 샀는지
+언제 샀는지 date picker
+왜 샀는지 textarea
+
+얼마에 팔았는지
+언제 팔았는지 date picker
+왜 팔았는지 textarea
+
+언제 팔건지 date picker
+언제 다시 살건지 date picker
+-->
+
+<h1>{{post.postname}}</h1>
+<p>{{post.market}}</p>
+<p>{{post.code_name}} ({{post.code}})</p>
+<p>{{post.summary}}</p>
+<p>{{post.chart_data_json}}</p>
+<p>{{post.buy_price}}</p>
+<p>{{post.buy_date}}</p>
+<p>{{post.buy_memo}}</p>
+
+{% autoescape off %}
+{{ plt_div }}
+{% endautoescape %}
+
+<a href="/">목록</a>
+</body>
+</html>
