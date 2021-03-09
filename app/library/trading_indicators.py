@@ -3,6 +3,7 @@ from datetime import datetime
 import FinanceDataReader as fdr
 import numpy as np
 
+
 def bollinger_band(price_df, n=20, k=2):
     bb = price_df.copy()
     bb['mbb'] = price_df['close'].rolling(n).mean()  # 중앙 이동 평균선
@@ -11,7 +12,8 @@ def bollinger_band(price_df, n=20, k=2):
 
     return bb
 
-def data_settings(code, start=datetime(2020, 1, 1), end=datetime.today()):
+
+def data_settings(code='005930', start=datetime(2020, 1, 1), end=datetime.today()):
     # 비트코인 원화 가격 (빗썸) 2016년~현재
     price_df = fdr.DataReader(code, start=start, end=end)
     # 결측치 존재 유무 확인
@@ -26,6 +28,15 @@ def data_settings(code, start=datetime(2020, 1, 1), end=datetime.today()):
         price_df['close'] = price_df.iloc[:]['Close'].astype(np.float64)
         price_df['volume'] = price_df.iloc[:]['Volume']
         price_df = bollinger_band(price_df)
-        df = price_df.loc[:, ['date','open', 'high', 'low', 'close', 'volume', 'ubb', 'mbb', 'lbb']].copy()
+        df = price_df.loc[:, ['date', 'open', 'high', 'low', 'close', 'volume', 'ubb', 'mbb', 'lbb']].copy()
+        print(df)
         return df
     return False
+
+
+def getName(name, age):
+    print(name + " : " + age)
+
+import sys
+if __name__ == '__main__':
+    getName(sys.argv[1], sys.argv[2])
