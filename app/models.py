@@ -14,6 +14,7 @@ class User(Model):
 
 class Account(Model):
     account = CharField(max_length=50)
+    name = CharField(max_length=50, null=True)
     user = ForeignKey(User, on_delete=CASCADE, null=True)
 
 
