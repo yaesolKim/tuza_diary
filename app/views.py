@@ -97,19 +97,36 @@ def devidend(request):
     return render(request, 'devidend.html', data)
 
 
-def market(request):
-    context = {}
-    html_template = loader.get_template('market.html')
+def devidends(request):
+    # devidends = models.Devidend.objects.all.filter(user_id=1)
+    devidends = models.Devidend.objects.all()
+    data = {'devidends': devidends}
+    return render(request, 'devidends.html', data)
 
-    return HttpResponse(html_template.render(context, request))
+
+# 계좌 관리 페이지
+def accounts(request):
+    accounts = models.Account.objects.all().filter(user_id=1)
+    data = {'accounts': accounts}
+    return render(request, 'accounts.html', data)
 
 
-def recon_chart(request, pk):
-    coin_df = data_settings(code='005930', start=datetime(2018, 1, 1))
-    fig = draw_candle_with_indicator(coin_df, '005930')
-    plt_div = plot(fig, output_type='div')
-    # post.html 페이지를 열 때, 찾아낸 게시글(post)을 post라는 이름으로 가져옴
-    return render(request, 'recon_chart.html', {'post': post, 'plt_div': plt_div})
+def account(request):
+    accounts = models.Account.objects.all()
+    data = {'accounts': accounts}
+    return render(request, 'accounts.html', data)
+
+
+def create(request):
+    if request.method == 'POST':
+        form = FeedbackForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('/feedback/list')
+    else:
+        form = FeedbackForm()
+
+    return render(request, 'feedback.html', {'form': form})
 
 
 async def get_coin_data_by_websocket():

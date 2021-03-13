@@ -1,0 +1,70 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} 계좌관리 {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-profile">
+                <div class="card-body">
+                    <h6 class="card-category text-gray">계좌관리</h6>
+                    {% if accounts %}
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">계좌명</th>
+                                    <th class="text-center">계좌번호</th>
+                                    <th class="text-right">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center"><input type="text" class="form-control text-center" placeholder="With Nucleo Icons"></td>
+                                    <td class="text-center"><input type="text" class="form-control text-center" placeholder="With Nucleo Icons"></td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-info btn-link btn-icon btn-sm">
+                                            <i class="tim-icons icon-check-2"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-icon btn-sm">
+                                            <i class="tim-icons icon-simple-remove"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            {% for acc in accounts %}
+                                <tr>
+                                    <td class="text-center">{{ acc.name }}</td>
+                                    <td class="text-center">{{ acc.account }}</td>
+                                    <td class="td-actions text-right">
+                                        <button type="button" rel="tooltip" class="btn btn-info btn-link btn-icon btn-sm">
+                                            <i class="tim-icons icon-check-2"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-success btn-link btn-icon btn-sm">
+                                            <i class="tim-icons icon-pencil"></i>
+                                        </button>
+                                        <button type="button" rel="tooltip" class="btn btn-danger btn-link btn-icon btn-sm">
+                                            <i class="tim-icons icon-simple-remove"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+
+                    {% else %}
+{#                        로그인 한 유저의 계좌 데이터가 없는 경우#}
+                        <p>저장된 계좌가 없습니다.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
